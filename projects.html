@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Progetti | Prima e dopo</title>
+  <meta name="description" content="Trasformazioni reali di case, uffici e filiali bancarie: confronta il prima e il dopo di ogni progetto.">
+  <meta name="theme-color" content="#14201C">
+  <link rel="stylesheet" href="styles.css">
+  <script src="js/config.js" defer></script>
+  <script src="js/i18n.js" defer></script>
+  <script src="js/app.js" defer></script>
+</head>
+<body data-page="projects">
+
+  <header id="site-header" class="site-header"></header>
+
+  <main id="main">
+    <section class="page-head wrap">
+      <h1 data-i18n="pj.title">I nostri progetti</h1>
+      <p class="lead" data-i18n="pj.text">Stessa inquadratura prima e dopo. Trascina il cursore per confrontare.</p>
+    </section>
+
+    <!-- To add a project: copy one <article>, change p1 to p6 in the image names, edit the texts. -->
+    <div class="projects wrap">
+
+      <article class="project">
+        <h2 data-i18n="pj.1.title">Appartamento di rappresentanza</h2>
+        <div class="ba ph" style="--ar:4/3" data-ba data-label="img/projects/p1-before.webp + p1-after.webp · 4:3">
+          <img class="ba-after" src="img/projects/p1-after.webp" width="800" height="600" loading="lazy" alt="Dopo i lavori" data-i18n-alt="ba.after" onerror="this.remove()">
+          <img class="ba-before" src="img/projects/p1-before.webp" width="800" height="600" loading="lazy" alt="Prima dei lavori" data-i18n-alt="ba.before" onerror="this.remove()">
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Confronta prima e dopo" data-i18n-aria="ba.range">
+          <span class="ba-handle" aria-hidden="true"></span>
+        </div>
+        <dl class="facts">
+          <div><dt data-i18n="pj.l.scope">Intervento</dt><dd data-i18n="pj.1.scope">Ristrutturazione completa, bagni e illuminazione</dd></div>
+          <div><dt data-i18n="pj.l.time">Durata</dt><dd data-i18n="pj.1.time">10 settimane</dd></div>
+        </dl>
+      </article>
+
+      <article class="project">
+        <h2 data-i18n="pj.2.title">Villa familiare</h2>
+        <div class="ba ph" style="--ar:4/3" data-ba data-label="img/projects/p2-before.webp + p2-after.webp · 4:3">
+          <img class="ba-after" src="img/projects/p2-after.webp" width="800" height="600" loading="lazy" alt="Dopo i lavori" data-i18n-alt="ba.after" onerror="this.remove()">
+          <img class="ba-before" src="img/projects/p2-before.webp" width="800" height="600" loading="lazy" alt="Prima dei lavori" data-i18n-alt="ba.before" onerror="this.remove()">
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Confronta prima e dopo" data-i18n-aria="ba.range">
+          <span class="ba-handle" aria-hidden="true"></span>
+        </div>
+        <dl class="facts">
+          <div><dt data-i18n="pj.l.scope">Intervento</dt><dd data-i18n="pj.2.scope">Zona giorno, pavimenti e falegnameria su misura</dd></div>
+          <div><dt data-i18n="pj.l.time">Durata</dt><dd data-i18n="pj.2.time">16 settimane</dd></div>
+        </dl>
+      </article>
+
+      <article class="project">
+        <h2 data-i18n="pj.3.title">Sede aziendale</h2>
+        <div class="ba ph" style="--ar:4/3" data-ba data-label="img/projects/p3-before.webp + p3-after.webp · 4:3">
+          <img class="ba-after" src="img/projects/p3-after.webp" width="800" height="600" loading="lazy" alt="Dopo i lavori" data-i18n-alt="ba.after" onerror="this.remove()">
+          <img class="ba-before" src="img/projects/p3-before.webp" width="800" height="600" loading="lazy" alt="Prima dei lavori" data-i18n-alt="ba.before" onerror="this.remove()">
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Confronta prima e dopo" data-i18n-aria="ba.range">
+          <span class="ba-handle" aria-hidden="true"></span>
+        </div>
+        <dl class="facts">
+          <div><dt data-i18n="pj.l.scope">Intervento</dt><dd data-i18n="pj.3.scope">Uffici open space, sale riunioni e controsoffitti</dd></div>
+          <div><dt data-i18n="pj.l.time">Durata</dt><dd data-i18n="pj.3.time">8 settimane</dd></div>
+        </dl>
+      </article>
+
+      <article class="project">
+        <h2 data-i18n="pj.4.title">Filiale bancaria</h2>
+        <div class="ba ph" style="--ar:4/3" data-ba data-label="img/projects/p4-before.webp + p4-after.webp · 4:3">
+          <img class="ba-after" src="img/projects/p4-after.webp" width="800" height="600" loading="lazy" alt="Dopo i lavori" data-i18n-alt="ba.after" onerror="this.remove()">
+          <img class="ba-before" src="img/projects/p4-before.webp" width="800" height="600" loading="lazy" alt="Prima dei lavori" data-i18n-alt="ba.before" onerror="this.remove()">
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Confronta prima e dopo" data-i18n-aria="ba.range">
+          <span class="ba-handle" aria-hidden="true"></span>
+        </div>
+        <dl class="facts">
+          <div><dt data-i18n="pj.l.scope">Intervento</dt><dd data-i18n="pj.4.scope">Lavori a fasi, area accoglienza e consulenza</dd></div>
+          <div><dt data-i18n="pj.l.time">Durata</dt><dd data-i18n="pj.4.time">6 settimane</dd></div>
+        </dl>
+      </article>
+
+      <article class="project">
+        <h2 data-i18n="pj.5.title">Studio professionale</h2>
+        <div class="ba ph" style="--ar:4/3" data-ba data-label="img/projects/p5-before.webp + p5-after.webp · 4:3">
+          <img class="ba-after" src="img/projects/p5-after.webp" width="800" height="600" loading="lazy" alt="Dopo i lavori" data-i18n-alt="ba.after" onerror="this.remove()">
+          <img class="ba-before" src="img/projects/p5-before.webp" width="800" height="600" loading="lazy" alt="Prima dei lavori" data-i18n-alt="ba.before" onerror="this.remove()">
+          <input class="ba-range" type="range" min="0" max="100" value="50" aria-label="Confronta prima e dopo" data-i18n-aria="ba.range">
+          <span class="ba-handle" aria-hidden="true"></span>
+        </div>
+        <dl class="facts">
+          <div><dt data-i18n="pj.l.scope">Intervento</dt><dd data-i18n="pj.5.scope">Riqualificazione completa di ambienti, impianti e finiture</dd></div>
+          <div><dt data-i18n="pj.l.time">Durata</dt><dd data-i18n="pj.5.time">7 settimane</dd></div>
+        </dl>
+      </article>
+
+    </div>
+
+    <section class="cta-band">
+      <div class="wrap">
+        <h2 data-i18n="home.cta.title">Parliamo del tuo spazio</h2>
+        <p data-i18n="home.cta.text">Prenota un sopralluogo: valutiamo l'intervento e ti proponiamo un preventivo su misura, senza impegno.</p>
+        <a class="btn btn-primary" href="contact.html" data-i18n="cta.visit">Richiedi un sopralluogo</a>
+      </div>
+    </section>
+  </main>
+
+  <footer id="site-footer" class="site-footer"></footer>
+
+</body>
+</html>
