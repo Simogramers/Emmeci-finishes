@@ -29,8 +29,7 @@ h3{font-size:1.25rem;font-weight:400;letter-spacing:-.01em;line-height:1.2}
 :focus-visible{outline:2px solid var(--accent);outline-offset:3px}
 
 /* ===== 3. HEADER + NAV ===== */
-.site-header{position:sticky;top:0;z-index:50;background:rgba(230,232,228,.92);
-  -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
+.site-header{position:sticky;top:0;z-index:70;background:var(--bg);
   border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
 .hdr-inner{display:flex;align-items:center;gap:.75rem;height:var(--hdr)}
 .brand{display:flex;align-items:center;gap:.55rem;font-weight:500;letter-spacing:.04em;text-decoration:none;margin-right:auto}
@@ -39,15 +38,23 @@ h3{font-size:1.25rem;font-weight:400;letter-spacing:-.01em;line-height:1.2}
 .lang button{font:inherit;font-size:.8rem;background:none;border:1px solid transparent;
   color:var(--mute);min-width:40px;min-height:40px;cursor:pointer;border-radius:var(--r)}
 .lang button[aria-pressed=true]{color:var(--ink);border-color:var(--ink)}
-.menu-btn{width:44px;height:44px;background:none;border:0;display:grid;place-content:center;gap:7px;cursor:pointer}
+.menu-btn{width:44px;height:44px;background:none;border:0;display:grid;place-content:center;gap:5px;cursor:pointer}
 .menu-btn span{display:block;width:24px;height:1.5px;background:var(--ink)}
-.nav{display:none;position:absolute;top:100%;left:0;right:0;
-  height:calc(100vh - var(--hdr) - env(safe-area-inset-top));
-  height:calc(100dvh - var(--hdr) - env(safe-area-inset-top));
-  background:var(--bg);flex-direction:column;overflow:auto;
-  padding:1.25rem 1.25rem calc(var(--bar) + 2rem)}
-.nav.open{display:flex}
-.nav a{font-size:1.6rem;font-weight:300;text-decoration:none;padding:.75rem 0;border-bottom:1px solid var(--line)}
+/* Side drawer (mobile): slides in from the right, page behind is dimmed */
+.nav{display:flex;flex-direction:column;position:fixed;top:0;right:0;bottom:0;z-index:2;
+  width:min(84vw,340px);overflow:auto;background:var(--surface);
+  padding:calc(env(safe-area-inset-top) + 4.5rem) 1.5rem calc(env(safe-area-inset-bottom) + 1.5rem);
+  box-shadow:-12px 0 32px rgba(20,32,28,.18);
+  transform:translateX(105%);visibility:hidden;
+  transition:transform .25s ease,visibility 0s linear .25s}
+.menu-open .nav{transform:none;visibility:visible;transition:transform .25s ease}
+.nav-backdrop{position:fixed;inset:0;z-index:1;background:rgba(20,32,28,.45);
+  opacity:0;visibility:hidden;transition:opacity .25s ease,visibility 0s linear .25s}
+.menu-open .nav-backdrop{opacity:1;visibility:visible;transition:opacity .25s ease}
+.nav-close{position:absolute;top:calc(env(safe-area-inset-top) + .5rem);right:.75rem;width:44px;height:44px;
+  background:none;border:0;font-size:2rem;line-height:1;color:var(--ink);cursor:pointer}
+body.menu-lock{overflow:hidden}
+.nav a{font-size:1.35rem;font-weight:300;text-decoration:none;padding:.8rem 0;border-bottom:1px solid var(--line)}
 .nav a[aria-current=page]{color:var(--accent)}
 
 /* ===== 4. BUTTONS ===== */
@@ -151,8 +158,9 @@ section[id]{scroll-margin-top:calc(var(--hdr) + 1rem)}
 }
 @media(min-width:900px){
   body{padding-bottom:0}
-  .menu-btn,.site-bar{display:none}
-  .nav{display:flex;position:static;height:auto;flex-direction:row;gap:1.5rem;padding:0;background:none;overflow:visible}
+  .menu-btn,.site-bar,.nav-close,.nav-backdrop{display:none}
+  .nav{display:flex;position:static;width:auto;height:auto;flex-direction:row;gap:1.5rem;padding:0;
+    background:none;overflow:visible;box-shadow:none;transform:none;visibility:visible;transition:none;z-index:auto}
   .nav a{font-size:.95rem;padding:0;border:0}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
