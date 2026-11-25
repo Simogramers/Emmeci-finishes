@@ -33,7 +33,8 @@ h3{font-size:1.25rem;font-weight:400;letter-spacing:-.01em;line-height:1.2}
   -webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);
   border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top)}
 .hdr-inner{display:flex;align-items:center;gap:.75rem;height:var(--hdr)}
-.brand{font-weight:500;text-decoration:none;letter-spacing:-.01em;margin-right:auto}
+.brand{display:flex;align-items:center;gap:.55rem;font-weight:500;letter-spacing:.04em;text-decoration:none;margin-right:auto}
+.brand img{width:34px;height:34px}
 .lang{display:flex;gap:.2rem}
 .lang button{font:inherit;font-size:.8rem;background:none;border:1px solid transparent;
   color:var(--mute);min-width:40px;min-height:40px;cursor:pointer;border-radius:var(--r)}
