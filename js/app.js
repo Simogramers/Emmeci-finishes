@@ -41,6 +41,11 @@
     footer.innerHTML =
       '<div class="ft-inner"><span class="ft-brand">' + (S.legal || S.brand) + "</span>" +
       '<span data-i18n="footer.tagline">Ristrutturazioni e finiture di interni su misura.</span>' +
+      (S.company
+        ? "<span>" + S.company.address + "</span>" +
+          "<span>P.IVA e C.F. " + S.company.vat + " / VAT " + S.company.eu + "</span>" +
+          "<span>REA " + S.company.rea + "</span>"
+        : "") +
       "<span>&copy; " + new Date().getFullYear() + " " + (S.legal || S.brand) + "</span></div>";
   }
 
