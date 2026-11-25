@@ -41,7 +41,9 @@ h3{font-size:1.25rem;font-weight:400;letter-spacing:-.01em;line-height:1.2}
 .lang button[aria-pressed=true]{color:var(--ink);border-color:var(--ink)}
 .menu-btn{width:44px;height:44px;background:none;border:0;display:grid;place-content:center;gap:7px;cursor:pointer}
 .menu-btn span{display:block;width:24px;height:1.5px;background:var(--ink)}
-.nav{display:none;position:fixed;inset:calc(var(--hdr) + env(safe-area-inset-top)) 0 0 0;
+.nav{display:none;position:absolute;top:100%;left:0;right:0;
+  height:calc(100vh - var(--hdr) - env(safe-area-inset-top));
+  height:calc(100dvh - var(--hdr) - env(safe-area-inset-top));
   background:var(--bg);flex-direction:column;overflow:auto;
   padding:1.25rem 1.25rem calc(var(--bar) + 2rem)}
 .nav.open{display:flex}
@@ -150,7 +152,7 @@ section[id]{scroll-margin-top:calc(var(--hdr) + 1rem)}
 @media(min-width:900px){
   body{padding-bottom:0}
   .menu-btn,.site-bar{display:none}
-  .nav{display:flex;position:static;flex-direction:row;gap:1.5rem;padding:0;background:none;overflow:visible}
+  .nav{display:flex;position:static;height:auto;flex-direction:row;gap:1.5rem;padding:0;background:none;overflow:visible}
   .nav a{font-size:.95rem;padding:0;border:0}
 }
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
