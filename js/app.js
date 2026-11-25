@@ -19,7 +19,7 @@
   if (header) {
     header.innerHTML =
       '<div class="hdr-inner wrap">' +
-      '<a class="brand" href="index.html">' + S.brand + "</a>" +
+      '<a class="brand" href="index.html"><img src="img/logo.webp" width="34" height="34" alt="">' + S.brand + "</a>" +
       '<nav class="nav" id="nav" aria-label="Menu">' +
       NAV.map(function (n) {
         return '<a href="' + n[0] + '"' + (n[1] === page ? ' aria-current="page"' : "") +
@@ -54,6 +54,13 @@
       ? '<a class="bar-btn bar-main" data-mail="jobs" data-i18n="bar.apply">Candidati</a>'
       : '<a class="bar-btn bar-main" href="contact.html" data-i18n="bar.visit">Sopralluogo</a>');
   document.body.appendChild(bar);
+
+  /* ---------- Favicon (logo) ---------- */
+  var fav = document.createElement("link");
+  fav.rel = "icon";
+  fav.type = "image/webp";
+  fav.href = "img/logo.webp";
+  document.head.appendChild(fav);
 
   /* ---------- Contact links (any [data-wa] / [data-mail] element) ---------- */
   function wire() {
