@@ -5,8 +5,16 @@
    ============================================================ */
 window.SITE = {
   brand: "EMMECI",                    // short name: header, mobile navbar
-  legal: "Emmeci Costruzioni srl",    // full legal name: footer, About
+  legal: "EMME.CI Costruzioni srl / GmbH",    // full legal name: footer, About
   defaultLang: "it",
+
+  // Company details shown in the footer
+  company: {
+    address: "Via Julius Durst 44, 39042 Bressanone (BZ)",
+    vat: "03284680216",         // P.IVA e Codice Fiscale
+    eu: "IT03284680216",        // European VAT
+    rea: "247237"
+  },
 
   // Clients: site visits (sopralluogo), quotes and project requests ONLY
   clients: {
