@@ -20,7 +20,7 @@
     header.innerHTML =
       '<div class="hdr-inner wrap">' +
       '<a class="brand" href="index.html"><img src="img/logo.webp" width="34" height="34" alt="">' + S.brand + "</a>" +
-      '<nav class="nav" id="nav" aria-label="Menu">' +
+      '<nav class="nav" id="nav" aria-label="Menu"><button class="nav-close" type="button" aria-label="Close">&times;</button>' +
       NAV.map(function (n) {
         return '<a href="' + n[0] + '"' + (n[1] === page ? ' aria-current="page"' : "") +
           ' data-i18n="' + n[2] + '">' + n[3] + "</a>";
@@ -32,8 +32,9 @@
       }).join("") +
       "</div>" +
       '<button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" ' +
-      'aria-label="Menu" data-i18n-aria="nav.menu"><span></span><span></span></button>' +
-      "</div>";
+      'aria-label="Menu" data-i18n-aria="nav.menu"><span></span><span></span><span></span></button>' +
+      "</div>" +
+      '<div class="nav-backdrop"></div>';
   }
 
   var footer = document.getElementById("site-footer");
@@ -92,18 +93,25 @@
   });
   document.addEventListener("langchange", wire);
 
-  /* ---------- Mobile menu ---------- */
-  var btn = document.querySelector(".menu-btn"), nav = document.getElementById("nav");
-  if (btn && nav) {
+  /* ---------- Mobile menu (side drawer) ---------- */
+  var btn = document.querySelector(".menu-btn");
+  function setMenu(open) {
+    header.classList.toggle("menu-open", open);
+    document.body.classList.toggle("menu-lock", open);
+    if (btn) btn.setAttribute("aria-expanded", String(open));
+  }
+  if (btn && header) {
     btn.addEventListener("click", function () {
-      var open = nav.classList.toggle("open");
-      btn.setAttribute("aria-expanded", String(open));
+      setMenu(!header.classList.contains("menu-open"));
     });
-    nav.addEventListener("click", function (e) {
-      if (e.target.closest("a")) {
-        nav.classList.remove("open");
-        btn.setAttribute("aria-expanded", "false");
-      }
+    header.addEventListener("click", function (e) {
+      if (e.target.closest("a, .nav-close, .nav-backdrop")) setMenu(false);
+    });
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") setMenu(false);
+    });
+    window.addEventListener("resize", function () {
+      if (window.innerWidth >= 900) setMenu(false);
     });
   }
 
